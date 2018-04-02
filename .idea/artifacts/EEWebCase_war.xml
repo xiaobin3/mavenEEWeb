@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="EEWebCase:war">
+    <output-path>$PROJECT_DIR$/EEWebCase/target</output-path>
+    <root id="archive" name="EEWebCase.war">
+      <element id="artifact" artifact-name="EEWebCase:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,91 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <context-param>
+    <param-name>encode</param-name>
+    <param-value>UTF-8</param-value>
+  </context-param>
+  <!-- 创建一个servlet实例 -->
+  <servlet>
+    <servlet-name>servletDemo1</servlet-name>
+    <servlet-class>com.xiaobin.servlet.servletDemo1</servlet-class>
+    <!-- servlet生命周期：实例化-1-初始化-2-服务-销毁 -->
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>servletDemo1</servlet-name>
+    <url-pattern>/xiaobin</url-pattern>
+  </servlet-mapping>
+
+  <!-- 创建一个servlet实例 -->
+  <servlet>
+    <servlet-name>servletDemo2HTTPServlet</servlet-name>
+    <servlet-class>com.xiaobin.servlet.servletDemo2HTTPServlet</servlet-class>
+    <!-- servlet生命周期：实例化-1-初始化-2-服务-销毁 -->
+    <!--<load-on-startup>2</load-on-startup>-->
+  </servlet>
+
+
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>servletDemo2HTTPServlet</servlet-name>
+    <url-pattern>/xiaobin2</url-pattern>
+  </servlet-mapping>
+
+  <!-- 创建一个servlet实例 -->
+  <servlet>
+    <servlet-name>servletConfigDemo</servlet-name>
+    <servlet-class>com.xiaobin.servletConfig.ServletConfigDemo</servlet-class>
+    <init-param>
+      <param-name>encode</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <!-- servlet生命周期：实例化-1-初始化-2-服务-销毁 -->
+    <!--<load-on-startup>2</load-on-startup>-->
+  </servlet>
+
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>servletConfigDemo</servlet-name>
+    <url-pattern>/servletConfig</url-pattern>
+  </servlet-mapping>
+
+
+  <!-- 创建一个servlet实例 -->
+  <servlet>
+    <servlet-name>servletContextDemo</servlet-name>
+    <servlet-class>com.xiaobin.servletConfig.ServletContextDemo</servlet-class>
+    <init-param>
+      <param-name>encode</param-name>
+      <param-value>UTF-8</param-value>
+    </init-param>
+    <!-- servlet生命周期：实例化-1-初始化-2-服务-销毁 -->
+    <!--<load-on-startup>2</load-on-startup>-->
+  </servlet>
+
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>servletContextDemo</servlet-name>
+    <url-pattern>/servletContext</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ServletRequestDispatcher</servlet-name>
+    <servlet-class>com.xiaobin.servletConfig.ServletRequestDispatcher</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>ServletRequestDispatcher</servlet-name>
+    <url-pattern>/servletrd</url-pattern>
+  </servlet-mapping>
+
+<!--  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>-->
+</web-app>

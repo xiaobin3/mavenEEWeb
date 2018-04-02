@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="EEWebMVC:war">
+    <output-path>$PROJECT_DIR$/EEWebMVC/target</output-path>
+    <root id="archive" name="EEWebMVC.war">
+      <element id="artifact" artifact-name="EEWebMVC:war exploded" />
+    </root>
+  </artifact>
+</component>
