@@ -85,6 +85,34 @@
     <url-pattern>/servletrd</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>ServletRespDemo1</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.ServletRespDemo1</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>ServletRespDemo1</servlet-name>
+    <url-pattern>/servletRespDemo1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletRespOut</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.ServletRespOut</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>ServletRespOut</servlet-name>
+    <url-pattern>/servletRespOut</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServletCheckImg</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.ServletCheckImg</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>ServletCheckImg</servlet-name>
+    <url-pattern>/servletCheckImg</url-pattern>
+  </servlet-mapping>
 <!--  <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>-->
