@@ -8,6 +8,7 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -35,7 +36,10 @@ public class CheckImgServlet extends HttpServlet {
 		// web工程中读取 文件，必须使用绝对磁盘路径
 		String path = getServletContext().getRealPath("/WEB-INF/new_words.txt");
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader(path));
+//			BufferedReader reader = new BufferedReader(new FileReader(path));
+			//解决乱码
+			BufferedReader reader = new BufferedReader(new InputStreamReader(this.getServletContext().getResourceAsStream("/WEB-INF/new_words.txt"),"utf-8"));
+
 			String line;
 			while ((line = reader.readLine()) != null) {
 				words.add(line);

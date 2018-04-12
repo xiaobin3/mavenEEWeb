@@ -64,7 +64,7 @@ public class DemoServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         List<String> words = new ArrayList<>();
         try {
-            BufferedReader buff = new BufferedReader(new InputStreamReader(this.getServletContext().getResourceAsStream("/WEB-INF/new_words.txt"),"utf-8"),2);
+            BufferedReader buff = new BufferedReader(new InputStreamReader(this.getServletContext().getResourceAsStream("/WEB-INF/new_words.txt"),"utf-8"));
             String word = null;
             while ((word = buff.readLine())!=null){
                 words.add(word);
