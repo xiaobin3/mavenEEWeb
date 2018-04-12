@@ -8,11 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.xiaobin.httpServletRequest.register.User;
+import com.xiaobin.httpServletRequest.utils.DataSourceUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 
-import com.ithiema.register.User;
-import com.ithiema.utils.DataSourceUtils;
 
 public class LoginServlet extends HttpServlet {
 

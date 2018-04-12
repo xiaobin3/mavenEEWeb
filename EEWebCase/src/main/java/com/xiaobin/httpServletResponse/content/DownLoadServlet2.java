@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.xiaobin.httpServletResponse.utils.FileUtil;
 import sun.misc.BASE64Encoder;
 
 public class DownLoadServlet2 extends HttpServlet {
@@ -30,22 +31,7 @@ public class DownLoadServlet2 extends HttpServlet {
 		//获得请求头中的User-Agent
 		String agent = request.getHeader("User-Agent");
 		//根据不同浏览器进行不同的编码
-		String filenameEncoder = "";
-		if (agent.contains("MSIE")) {
-			// IE浏览器
-			filenameEncoder = URLEncoder.encode(filename, "utf-8");
-			filenameEncoder = filenameEncoder.replace("+", " ");
-		} else if (agent.contains("Firefox")) {
-			// 火狐浏览器
-			BASE64Encoder base64Encoder = new BASE64Encoder();
-			filenameEncoder = "=?utf-8?B?"
-					+ base64Encoder.encode(filename.getBytes("utf-8")) + "?=";
-		} else {
-			// 其它浏览器
-			filenameEncoder = URLEncoder.encode(filename, "utf-8");				
-		}
-
-
+		String filenameEncoder = FileUtil.fileNameEncoderUtil(agent,filename);
 
 		//要下载的这个文件的类型-----客户端通过文件的MIME类型去区分类型
 		response.setContentType(this.getServletContext().getMimeType(filename));

@@ -19,7 +19,7 @@ public class ByteServlet extends HttpServlet {
 		ServletOutputStream out = response.getOutputStream();
 		
 		//获得服务器上的图片
-		String realPath = this.getServletContext().getRealPath("a.jpg");
+		String realPath = this.getServletContext().getRealPath("/WEB-INF/美女.jpg");
 		InputStream in = new FileInputStream(realPath);
 		
 		int len = 0;

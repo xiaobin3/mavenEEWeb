@@ -11,10 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.xiaobin.httpServletRequest.utils.DataSourceUtils;
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.dbutils.QueryRunner;
 
-import com.ithiema.utils.DataSourceUtils;
 
 public class RegisterServlet extends HttpServlet {
 

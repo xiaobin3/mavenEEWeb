@@ -1,7 +1,5 @@
 package com.xiaobin.httpServletResponse;
 
-import cn.dsna.util.images.ValidateCode;
-
 import javax.imageio.ImageIO;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -36,11 +34,11 @@ public class ServletCheckImg extends HttpServlet {
         response.setIntHeader("expires", 0);
 
 
-//        test1(response);
+        test1(response);
 
-        ValidateCode vc = new ValidateCode(110, 25, 4, 9);
-        String code = vc.getCode();//得到生成的字符
-        vc.write(response.getOutputStream());
+//        ValidateCode vc = new ValidateCode(110, 25, 4, 9);
+//        String code = vc.getCode();//得到生成的字符
+//        vc.write(response.getOutputStream());
     }
 
     private void test1(HttpServletResponse response) throws IOException {

@@ -11,7 +11,7 @@ public class RefreshServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		//设置定时刷新的头
+		//设置定时刷新的头 5秒后转到对应的网址
 		response.setHeader("refresh", "5;url=http://www.baidu.com");
 		
 	}

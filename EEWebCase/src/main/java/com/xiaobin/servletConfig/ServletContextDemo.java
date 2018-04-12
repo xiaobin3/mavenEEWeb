@@ -43,7 +43,7 @@ public class ServletContextDemo extends HttpServlet {
 
         Properties properties = new Properties();
         properties.load(new FileInputStream(path1));
-        //取出文件内容，map形式
+        //取出文件内容，map形式 key=I am a.properties
         System.out.println(properties.get("key"));
     }
 }

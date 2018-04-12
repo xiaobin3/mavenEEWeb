@@ -113,6 +113,53 @@
     <servlet-name>ServletCheckImg</servlet-name>
     <url-pattern>/servletCheckImg</url-pattern>
   </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>StatusServlet</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.line.StatusServlet</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>StatusServlet</servlet-name>
+    <url-pattern>/statusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlet1</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.header.Servlet1</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>Servlet1</servlet-name>
+    <url-pattern>/servlet1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>Servlet2</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.header.Servlet2</servlet-class>
+  </servlet>
+  <!-- 给servlet提供一个可供客户端访问的URI -->
+  <servlet-mapping>
+    <servlet-name>Servlet2</servlet-name>
+    <url-pattern>/servlet2</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CheckImgServlet</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.checkimg.CheckImgServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckImgServlet</servlet-name>
+    <url-pattern>/checkImgServlet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>DemoServlet</servlet-name>
+    <servlet-class>com.xiaobin.httpServletResponse.demo.DemoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DemoServlet</servlet-name>
+    <url-pattern>/demoServlet</url-pattern>
+  </servlet-mapping>
 <!--  <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>-->
