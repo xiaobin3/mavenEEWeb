@@ -24,6 +24,7 @@ public class ContentServlet extends HttpServlet {
 		for(String hobby:hobbys){
 			System.out.println(hobby);
 		}
+		System.out.println("------------------");
 		//3、获得所有的请求参数的名称
 		Enumeration<String> parameterNames = request.getParameterNames();
 		while(parameterNames.hasMoreElements()){
