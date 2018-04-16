@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="EEWebCase" target="1.7" />
+      <module name="EEWebCase" target="1.5" />
       <module name="EEWebMVC" target="1.5" />
       <module name="mavenEEWeb" target="1.5" />
     </bytecodeTargetLevel>
