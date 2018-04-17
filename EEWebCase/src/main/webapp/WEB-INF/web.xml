@@ -194,7 +194,7 @@
     <url-pattern>/lastAccessTimeServlet</url-pattern>
   </servlet-mapping>
   
-  <!--事物-->
+  <!--事务-->
   <servlet>
     <servlet-name>TransferServlet</servlet-name>
     <servlet-class>com.xiaobin.transaction.transfer.web.TransferServlet</servlet-class>
