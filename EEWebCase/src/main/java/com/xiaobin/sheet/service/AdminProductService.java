@@ -1,14 +1,12 @@
-package com.xiaobin.addDeleteUpdateQry.service;
+package com.xiaobin.sheet.service;
 
-import com.xiaobin.addDeleteUpdateQry.dao.AdminProductDao;
-import com.xiaobin.addDeleteUpdateQry.domain.Category;
-import com.xiaobin.addDeleteUpdateQry.domain.Product;
-import com.xiaobin.addDeleteUpdateQry.domain.User;
+import com.xiaobin.sheet.dao.AdminProductDao;
+import com.xiaobin.sheet.domain.Category;
+import com.xiaobin.sheet.domain.Product;
+import com.xiaobin.sheet.vo.Condition;
 
 import java.sql.SQLException;
 import java.util.List;
-import java.util.UUID;
-
 
 public class AdminProductService {
 	
@@ -51,26 +49,10 @@ public class AdminProductService {
 		dao.updateProduct(product);
 	}
 
-	public void insertUser(User user) throws SQLException {
+	//根据条件查询商品列表
+	public List<Product> findProductListByCondition(Condition condition) throws SQLException {
 		AdminProductDao dao = new AdminProductDao();
-		dao.insertUser(user);
-	}
-
-	public static void main(String[] args) throws SQLException {
-//		username, password, name, email, telephone, birthday, sex, state
-		User user = new User();
-		user.setUid(UUID.randomUUID().toString());
-		user.setUserName("maven");
-		user.setPassWord("!@#$%^&*(");
-		user.setEmail("jsdh@123.com");
-		user.setName("键盘");
-		user.setTelephone("19191919191");
-		user.setBirthday("1999-09-09");
-		user.setSex("male");
-		user.setState(1);
-		AdminProductService adminProductService = new AdminProductService();
-		adminProductService.insertUser(user);
-		System.out.println("--------------------------OK!");
+		return dao.findProductListByCondition(condition);
 	}
 
 }

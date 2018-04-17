@@ -203,6 +203,55 @@
     <servlet-name>TransferServlet</servlet-name>
     <url-pattern>/transferServlet</url-pattern>
   </servlet-mapping>
+  <!--DAO-->
+  <servlet>
+    <servlet-name>AdminAddProductUIServlet</servlet-name>
+    <servlet-class>com.xiaobin.addDeleteUpdateQry.web.AdminAddProductUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminAddProductUIServlet</servlet-name>
+    <url-pattern>/adminAddProductUIServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>AdminDelProductServlet</servlet-name>
+    <servlet-class>com.xiaobin.addDeleteUpdateQry.web.AdminDelProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminDelProductServlet</servlet-name>
+    <url-pattern>/adminDelProductServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>AdminProductListServlet</servlet-name>
+    <servlet-class>com.xiaobin.addDeleteUpdateQry.web.AdminProductListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminProductListServlet</servlet-name>
+    <url-pattern>/adminProductListServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>AdminUpdateProductServlet</servlet-name>
+    <servlet-class>com.xiaobin.addDeleteUpdateQry.web.AdminUpdateProductServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminUpdateProductServlet</servlet-name>
+    <url-pattern>/adminUpdateProductServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>AdminUpdateProductUIServlet</servlet-name>
+    <servlet-class>com.xiaobin.addDeleteUpdateQry.web.AdminUpdateProductUIServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminUpdateProductUIServlet</servlet-name>
+    <url-pattern>/adminUpdateProductUIServlet</url-pattern>
+  </servlet-mapping>
 <!--  <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>-->

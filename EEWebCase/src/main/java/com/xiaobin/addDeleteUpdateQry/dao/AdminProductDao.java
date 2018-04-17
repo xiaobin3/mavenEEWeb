@@ -2,6 +2,7 @@ package com.xiaobin.addDeleteUpdateQry.dao;
 
 import com.xiaobin.addDeleteUpdateQry.domain.Category;
 import com.xiaobin.addDeleteUpdateQry.domain.Product;
+import com.xiaobin.addDeleteUpdateQry.domain.User;
 import com.xiaobin.addDeleteUpdateQry.utils.DataSourceUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
@@ -56,6 +57,28 @@ public class AdminProductDao {
 		runner.update(sql,product.getPname(),product.getMarket_price(),
 				product.getShop_price(),product.getPimage(),product.getPdate(),product.getIs_hot(),
 				product.getPdesc(),product.getPflag(),product.getCid(),product.getPid());
+	}
+
+	public User fingUserByUid(String uid) throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		String sql = "select * from user where uid = ?";
+		User user = runner.query(sql, new BeanHandler<User>(User.class) , uid);
+		return user;
+	}
+
+	public List<User> findAllUser() throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		String sql = "select * from user";
+		List<User> users = runner.query(sql,new BeanListHandler<User>(User.class));
+		return users;
+	}
+
+	public void insertUser(User user) throws SQLException {
+		QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+		String sql = "insert into user (uid,username, password, name, email, telephone, birthday, sex, state) values(?,?,?,?,?,?,?,?,?)";
+		runner.update(sql,user.getUid(),user.getUserName(),user.getPassWord(),
+				user.getName(),user.getEmail(),user.getTelephone(),
+				user.getBirthday(),user.getSex(),user.getState());
 	}
 
 }
