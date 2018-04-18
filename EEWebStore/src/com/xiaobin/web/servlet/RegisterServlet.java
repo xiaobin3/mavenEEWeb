@@ -64,6 +64,8 @@ public class RegisterServlet extends HttpServlet {
         String activeCode = CommonsUtils.getUUID();
         user.setCode(activeCode);
 
+//        String birthday = new SimpleDateFormat("yyyy-MM-dd").format(user.getBirthday());
+//        user.setBirthday(birthday);
 
         //将user传递给service层
         UserService service = new UserService();

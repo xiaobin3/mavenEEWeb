@@ -4,6 +4,6 @@
 		<property name="user">root</property>
 		<property name="password">root</property>
 		<property name="driverClass">com.mysql.jdbc.Driver</property>
-		<property name="jdbcUrl">jdbc:mysql:///heimashop</property>
-	</default-config> 
+		<property name="jdbcUrl">jdbc:mysql:///maven_spring_data?serverTimezone=Hongkong</property>
+	</default-config>
 </c3p0-config> 
