@@ -1,22 +1,20 @@
 package com.xiaobin.sheet.web;
 
-import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
+import com.xiaobin.sheet.domain.Category;
+import com.xiaobin.sheet.domain.Product;
+import com.xiaobin.sheet.service.AdminProductService;
+import com.xiaobin.sheet.vo.Condition;
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.beanutils.BeanUtils;
-
-import com.itheima.domain.Category;
-import com.itheima.domain.Product;
-import com.itheima.service.AdminProductService;
-import com.itheima.vo.Condition;
+import java.io.IOException;
+import java.lang.reflect.InvocationTargetException;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.Map;
 
 public class AdminSearchProductListServlet extends HttpServlet {
 

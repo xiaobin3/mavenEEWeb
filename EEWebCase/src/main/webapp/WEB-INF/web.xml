@@ -6,9 +6,15 @@
   <display-name>Archetype Created Web Application</display-name>
 
   <context-param>
-    <param-name>encode</param-name>
+    <param-name>enCode</param-name>
     <param-value>UTF-8</param-value>
   </context-param>
+
+  <!--<listener>-->
+    <!--&lt;!&ndash;<listener-class>com.xiaobin.listener.birthday.BirthdayListener</listener-class>&ndash;&gt;-->
+    <!--<listener-class>com.xiaobin.listener.create.MyServletContextListener</listener-class>-->
+  <!--</listener>-->
+
   <!-- 创建一个servlet实例 -->
   <servlet>
     <servlet-name>servletDemo1</servlet-name>

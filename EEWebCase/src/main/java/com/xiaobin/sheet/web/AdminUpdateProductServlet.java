@@ -1,22 +1,19 @@
 package com.xiaobin.sheet.web;
 
+import com.xiaobin.sheet.domain.Product;
+import com.xiaobin.sheet.service.AdminProductService;
+import org.apache.commons.beanutils.BeanUtils;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
-import java.util.UUID;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.commons.beanutils.BeanUtils;
-
-import com.itheima.domain.Product;
-import com.itheima.service.AdminProductService;
 
 public class AdminUpdateProductServlet extends HttpServlet {
 

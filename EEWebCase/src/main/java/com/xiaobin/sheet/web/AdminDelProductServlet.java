@@ -1,5 +1,7 @@
 package com.xiaobin.sheet.web;
 
+import com.xiaobin.sheet.service.AdminProductService;
+
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -8,7 +10,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.itheima.service.AdminProductService;
 
 public class AdminDelProductServlet extends HttpServlet {
 
