@@ -40,12 +40,12 @@ public class UserDao {
     public static void main(String[] args){
         UserDao userDao = new UserDao();
         try {
-//            Long count = userDao.checkUsername("lili");
-//            System.out.println("校验用户名是否存在:"+count);
-            QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
-            String sql = "select count(*) from user where username=?";
-            User user = runner.query(sql, new BeanHandler<User>(User.class), "aaa");
-            System.out.println("User:"+user.toString());
+            Long count = userDao.checkUsername("lili");
+            System.out.println("校验用户名是否存在:"+count);
+//            QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+//            String sql = "select count(*) from user where username=?";
+//            User user = runner.query(sql, new BeanHandler<User>(User.class), "aaa");
+//            System.out.println("User:"+user.toString());
 
         } catch (SQLException e) {
             e.printStackTrace();
