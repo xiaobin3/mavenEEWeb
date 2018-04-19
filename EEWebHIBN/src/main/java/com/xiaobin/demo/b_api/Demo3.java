@@ -1,4 +1,4 @@
-package com.xiaobin.b_api;
+package com.xiaobin.demo.b_api;
 
 import com.xiaobin.domain.Customer;
 import org.hibernate.Session;
@@ -88,7 +88,7 @@ public class Demo3 {
 	}
 	@Test
 	//session的修改
-	//修改id为1的customer对象的name属性为黑马程序员
+	//修改id为2的customer对象的name属性为黑马程序员
 	public void fun4(){
 		//1 创建,调用空参构造
 		Configuration conf = new Configuration().configure();
@@ -103,7 +103,7 @@ public class Demo3 {
 		Transaction tx2 = session.beginTransaction();
 		//----------------------------------------------
 		//1 获得要修改的对象
-		Customer c = (Customer) session.get(Customer.class, 1l);
+		Customer c = (Customer) session.get(Customer.class, 2L);
 		//2 修改
 		c.setCust_name("黑马程序员");
 		//3 执行update
@@ -131,12 +131,28 @@ public class Demo3 {
 		Transaction tx2 = session.beginTransaction();
 		//----------------------------------------------
 		//1 获得要修改的对象
-		Customer c = (Customer) session.get(Customer.class, 1l);
+		Customer c = (Customer) session.get(Customer.class, 1L);
 		//2 调用delete删除对象
 		session.delete(c);
 		//----------------------------------------------
 		tx2.commit();//提交事务
 		session.close();//释放资源
 		sf.close();//释放资源
+	}
+
+	@Test
+	public void fun6(){
+		Configuration configure = new Configuration().configure();
+		SessionFactory sessionFactory = configure.buildSessionFactory();
+		Session session = sessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		//----------------------------------------------
+		//1 获得要的对象
+		Customer c = (Customer) session.get(Customer.class,2L);
+		System.out.println(c);
+
+		transaction.commit();
+		session.close();
+		sessionFactory.close();
 	}
 }

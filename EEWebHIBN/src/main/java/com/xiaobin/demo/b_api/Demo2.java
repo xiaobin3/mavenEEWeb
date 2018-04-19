@@ -1,4 +1,4 @@
-package com.xiaobin.b_api;
+package com.xiaobin.demo.b_api;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

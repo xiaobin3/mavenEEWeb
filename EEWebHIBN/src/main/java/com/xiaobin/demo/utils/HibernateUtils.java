@@ -1,4 +1,4 @@
-package com.xiaobin.utils;
+package com.xiaobin.demo.utils;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

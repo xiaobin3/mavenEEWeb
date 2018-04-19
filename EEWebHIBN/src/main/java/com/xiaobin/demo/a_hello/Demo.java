@@ -1,4 +1,4 @@
-package com.xiaobin.a_hello;
+package com.xiaobin.demo.a_hello;
 
 import com.xiaobin.domain.Customer;
 import org.hibernate.Session;
@@ -14,6 +14,7 @@ public class Demo {
 	@Test
 	//保存客户
 	public void fun1(){
+//		this.configure("/hibernate.cfg.xml");
 		Configuration conf = new Configuration().configure();
 		
 		SessionFactory sessionFactory = conf.buildSessionFactory();
