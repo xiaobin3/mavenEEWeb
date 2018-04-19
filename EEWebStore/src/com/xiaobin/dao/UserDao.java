@@ -5,11 +5,19 @@ import com.xiaobin.utils.DataSourceUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
 
 
 public class UserDao {
+
+    public User login(String userName,String password) throws SQLException {
+        QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+        String sql = "select * from user where username = ? and password = ?";
+        User user = runner.query(sql,new BeanHandler<User>(User.class),userName,password);
+        return user;
+    }
 
     public int regist(User user) throws SQLException {
         QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
@@ -51,6 +59,13 @@ public class UserDao {
             e.printStackTrace();
             System.out.println("FAILED!"+e.getMessage());
         }
+    }
+
+    @Test
+    public void activeTest() throws SQLException {
+        QueryRunner runner = new QueryRunner(DataSourceUtils.getDataSource());
+        String sql = "update user set state=? where code=?";
+        runner.update(sql, 1, "91e64a78-54d4-4cf4-b0ff-6d22d0f55072");
     }
 
 }

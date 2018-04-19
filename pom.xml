@@ -8,6 +8,7 @@
     <modules>
         <module>EEWebMVC</module>
         <module>EEWebCase</module>
+        <module>EEWebHIBN</module>
     </modules>
     <name>maven-SpringMVC Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -75,7 +76,7 @@
         </dependency>
 
         <!-- hibernate需要的jar包 -->
-        <!--<dependency>
+        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>4.3.1.Final</version>
@@ -88,12 +89,12 @@
             <type>jar</type>
         </dependency>
 
-        &lt;!&ndash; hibernate ehcache需要的jar包 &ndash;&gt;
+        <!-- hibernate ehcache需要的jar包 -->
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-ehcache</artifactId>
             <version>4.3.8.Final</version>
-        </dependency>-->
+        </dependency>
 
         <!-- 连接MySQL数据库需要的jar包 -->
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
