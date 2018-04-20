@@ -22,4 +22,12 @@
         <servlet-name>AddCustomerServlet</servlet-name>
         <url-pattern>/addCustomerServlet</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>AddCustServlet</servlet-name>
+        <servlet-class>com.xiaobin.web.AddCustServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddCustServlet</servlet-name>
+        <url-pattern>/addCustServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

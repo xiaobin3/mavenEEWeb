@@ -9,6 +9,7 @@
         <module>EEWebMVC</module>
         <module>EEWebCase</module>
         <module>EEWebHIBN</module>
+        <module>EEWebSpring</module>
     </modules>
     <name>maven-SpringMVC Maven Webapp</name>
     <url>http://maven.apache.org</url>
