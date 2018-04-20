@@ -10,6 +10,7 @@
         <module>EEWebCase</module>
         <module>EEWebHIBN</module>
         <module>EEWebSpring</module>
+        <module>EEWebMybatis</module>
     </modules>
     <name>maven-SpringMVC Maven Webapp</name>
     <url>http://maven.apache.org</url>

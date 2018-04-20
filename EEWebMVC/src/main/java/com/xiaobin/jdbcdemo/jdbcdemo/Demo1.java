@@ -15,16 +15,15 @@ public class Demo1 {
 		DriverManager.registerDriver(new com.mysql.jdbc.Driver());
 
 		//获取连接Connection
-		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/spring?serverTimezone=UTC", "root", "root");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/maven_spring_data?serverTimezone=UTC", "develop", "develop");
 		//得到执行sequel语句的对象Statement
 		Statement stmt = conn.createStatement();
 		//执行sql语句，并返回结果
-		ResultSet rs = stmt.executeQuery("select password,email,birthday,id,name from users");
+		ResultSet rs = stmt.executeQuery("select password,email,birthday,name from user");
 
 		//处理结果
 		while(rs.next()){
 			System.out.println(rs.getObject("password"));
-			System.out.println(rs.getObject("id"));
 			System.out.println(rs.getObject("name"));
 			System.out.println(rs.getObject("birthday"));
 			System.out.println(rs.getObject("email"));
