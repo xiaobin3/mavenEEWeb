@@ -1,20 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!--空参构造创建对象-->
-    <bean name="User" class="com.xiaobin.bean.User"></bean>
+    <bean name="User" class="com.xiaobin.bean.User" init-method="init" destroy-method="destory">
+        <!--set方法属性注入-->
+        <property name="name" value="tom"/>
+        <property name="age" value="18"/>
+        <!--为User属性添加Car属性-->
+        <property name="car" ref="Car"/>
+    </bean>
+
+    <bean name="Car" class="com.xiaobin.bean.Car">
+        <property name="name" value="Geelee"/>
+        <property name="color" value="Orange"/>
+    </bean>
 
     <!--<bean name="OrdCust" class="com.xiaobin.bean.OrdCust">-->
-        <!--<property name="ordList">-->
-            <!--<list>-->
-                <!--<value>fromChina</value>-->
-                <!--<value>fromUSA</value>-->
-                <!--<value>fromUK</value>-->
-                <!--<ref bean="User"></ref>-->
-            <!--</list>-->
-        <!--</property>-->
+    <!--<property name="ordList">-->
+    <!--<list>-->
+    <!--<value>fromChina</value>-->
+    <!--<value>fromUSA</value>-->
+    <!--<value>fromUK</value>-->
+    <!--<ref bean="User"></ref>-->
+    <!--</list>-->
+    <!--</property>-->
     <!--</bean>-->
 
+    <!-- ============================================================= -->
+    <!-- 复杂类型注入 -->
+    <bean name="cb" class="com.xiaobin.bean.CollectionBean">
+        <!-- 如果数组中只准备注入一个值(对象),直接使用value|ref即可-->
+        <!--<property name="arr" value="tom" ></property>-->
+
+        <!-- array注入,多个元素注入 -->
+        <property name="arr">
+            <list>
+                <value>tom</value>
+                <value>jerry</value>
+                <ref bean="User"/>
+            </list>
+        </property>
+
+        <!-- 如果List中只准备注入一个值(对象),直接使用value|ref即可
+        <property name="list" value="jack" ></property>-->
+        <property name="list">
+            <list>
+                <value>jack</value>
+                <value>rose</value>
+                <ref bean="User"/>
+            </list>
+        </property>
+        <!-- map类型注入 -->
+        <property name="map">
+            <map>
+                <entry key="url" value="jdbc:mysql:///crm"></entry>
+                <entry key="user" value-ref="User"></entry>
+                <entry key-ref="User" value-ref="User"></entry>
+            </map>
+        </property>
+        <!-- prperties 类型注入 -->
+        <property name="prop">
+            <props>
+                <prop key="driverClass">com.jdbc.mysql.Driver</prop>
+                <prop key="userName">develop</prop>
+                <prop key="password">develop</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <!-- ============================================================= -->
+    <!--指定扫描com.xiaobin.bean包下的所有类中的注解.-->
+    <!--注意:扫描包时.会扫描指定报下的所有子孙包-->
+    <context:component-scan base-package="com.xiaobin.bean"></context:component-scan>
 </beans>
