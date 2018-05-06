@@ -4,27 +4,26 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- 写Sql语句   -->
 <mapper namespace="com.xiaobin.mybatis.mapper.UserMapper">
+    <sql id="selector">
+        select * from user
+    </sql>
+
     <!-- 通过ID查询一个用户 -->
     <select id="findUserById" parameterType="Integer" resultType="User">
-		select * from user where id = #{v}
-	</select>
+        select * from user where id = #{v}
+    </select>
 
-    <!-- //根据用户名称模糊查询用户列表  两种写法
-    #{}    select * from user where username like "%"?"%"   ?    占位符  ? ==  '五'
+    <!-- //根据用户名称模糊查询用户列表
+    #{}    select * from user where id = ？    占位符  ? ==  '五'
     ${}    select * from user where username like '%五%'  字符串拼接
 
      -->
     <select id="findUserByUsername" parameterType="String" resultType="com.xiaobin.mybatis.pojo.User">
-		select * from user where username like "%"#{v}"%"
-	</select>
-
-    <!--<select id="findUserByUsername" parameterType="String" resultType="com.xiaobin.mybatis.pojo.User">-->
-        <!--select * from user where username like '%${value}%'-->
-    <!--</select>-->
+        select * from user where username like "%"#{haha}"%"
+    </select>
 
     <!-- 添加用户 -->
     <insert id="insertUser" parameterType="com.xiaobin.mybatis.pojo.User">
-        /*查询主键*/
         <selectKey keyProperty="id" resultType="Integer" order="AFTER">
             select LAST_INSERT_ID()
         </selectKey>
@@ -34,16 +33,61 @@
 
     <!-- 更新 -->
     <update id="updateUserById" parameterType="com.xiaobin.mybatis.pojo.User">
-		update user 
-		set username = #{username},sex = #{sex},birthday = #{birthday},address = #{address}
-		where id = #{id}
-	</update>
+        update user
+        set username = #{username},sex = #{sex},birthday = #{birthday},address = #{address}
+        where id = #{id}
+    </update>
 
     <!-- 删除 -->
     <delete id="deleteUserById" parameterType="Integer">
-		delete from user 
-		where id = #{vvvvv}
-	</delete>
+        delete from user
+        where id = #{vvvvv}
+    </delete>
+
+    <!-- 根据用户名模糊查询 -->
+    <select id="findUserByQueryVo" parameterType="QueryVo" resultType="com.xiaobin.mybatis.pojo.User">
+        select * from user where username like "%"#{user.username}"%"
+    </select>
+
+    <!--
+     -->
+    <select id="countUser" resultType="Integer">
+        select count(1) from user
+    </select>
+
+
+    <!--	根据性别和名字查询用户  where 可以去掉第一个前ANd   -->
+    <select id="selectUserBySexAndUsername" parameterType="User" resultType="User">
+        <include refid="selector"/>
+        <where>
+            <if test="sex != null and sex != ''">
+                and sex = #{sex}
+            </if>
+            <if test="username != null and username != ''">
+                and username = #{username}
+            </if>
+        </where>
+    </select>
+
+    <!-- 多个ID (1,2,3)-->
+    <select id="selectUserByIds" parameterType="QueryVo" resultType="User">
+
+        <include refid="selector"/>
+        <where>
+            <foreach collection="list" item="id" separator="," open="id in (" close=")">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+    <delete id="deleteUserByIds" parameterType="List">
+        DELETE FROM USER
+        <where>
+            <foreach collection="list" item="id" separator="," open="id in (" close=")">
+                #{id}
+            </foreach>
+        </where>
+    </delete>
 
 
 </mapper>

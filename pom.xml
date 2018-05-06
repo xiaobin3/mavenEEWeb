@@ -12,6 +12,9 @@
         <module>EEWebSpring</module>
         <module>EEWebMybatis</module>
         <module>EEWebSSM</module>
+        <module>EEWebSpringMybatis</module>
+        <module>EEWebSpringMVC</module>
+        <module>EEWebSpringMVCMybatis</module>
     </modules>
     <name>maven-SpringMVC Maven Webapp</name>
     <url>http://maven.apache.org</url>
@@ -77,11 +80,11 @@
             <version>1.8.13</version>
         </dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>4.3.12.RELEASE</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework</groupId>-->
+            <!--<artifactId>spring-test</artifactId>-->
+            <!--<version>4.3.12.RELEASE</version>-->
+        <!--</dependency>-->
 
         <!--Mybatis-->
         <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
@@ -98,25 +101,25 @@
         </dependency>
 
         <!-- hibernate需要的jar包 -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>4.3.1.Final</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-validator</artifactId>-->
+            <!--<version>4.3.1.Final</version>-->
+        <!--</dependency>-->
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>4.2.16.Final</version>
-            <type>jar</type>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-core</artifactId>-->
+            <!--<version>4.2.16.Final</version>-->
+            <!--<type>jar</type>-->
+        <!--</dependency>-->
 
         <!-- hibernate ehcache需要的jar包 -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-ehcache</artifactId>
-            <version>4.3.8.Final</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-ehcache</artifactId>-->
+            <!--<version>4.3.8.Final</version>-->
+        <!--</dependency>-->
 
         <!-- 连接MySQL数据库需要的jar包 -->
         <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
@@ -280,11 +283,11 @@
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dubbo</artifactId>
-            <version>2.5.3</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.alibaba</groupId>-->
+            <!--<artifactId>dubbo</artifactId>-->
+            <!--<version>2.5.3</version>-->
+        <!--</dependency>-->
         <!-- https://mvnrepository.com/artifact/com.alibaba/druid -->
         <dependency>
             <groupId>com.alibaba</groupId>

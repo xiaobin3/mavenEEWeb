@@ -31,6 +31,7 @@
         <!-- 		<mapper class="com.xiaobin.mybatis.mapper.UserMapper" /> -->
         <!-- 		<mapper url="" /> -->
         <mapper resource="mapper/UserMapper.xml"></mapper>
+        <mapper resource="mapper/OrderMapper.xml"></mapper>
         <!--<package name="com.xiaobin.mybatis.mapper"/>-->
     </mappers>
 </configuration>
